@@ -11,19 +11,26 @@ using System.Windows.Forms;
 
 namespace CotizadorQuark
 {
-    public partial class Form1 : Form
+    public partial class Vista : Form
     {
-        public Form1()
+        public Vista()
         {
             InitializeComponent();
         }
 
+        public void Vista_Load(object sender, EventArgs e)
+        {
+             PriceController priceControl = new PriceController();
+
+
+        }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             chupin.Enabled = false;
             mangaCorta.Enabled = true;
             cuelloMao.Enabled = true;
             chupin.Checked = false;
+            priceControl.TipoPrenda = "Camisa";
         }
 
         private void pantalon_CheckedChanged(object sender, EventArgs e)
@@ -33,13 +40,15 @@ namespace CotizadorQuark
             cuelloMao.Enabled = false;
             mangaCorta.Checked = false;
             cuelloMao.Checked = false;
+            priceControl.TipoPrenda = "Pantalon";
         }
         
         private void button1_Click(object sender, EventArgs e)
         {
-            PriceController priceController = new PriceController();
-            int resultado = priceController.calculatePrice(this);
-            label11.Text = resultado.ToString();
+            
+            
+            //int resultado = priceController.calculatePrice(this);
+            //label11.Text = resultado.ToString();
         }
 
         private bool checkValidForm()
@@ -69,37 +78,48 @@ namespace CotizadorQuark
         private void precioUnitario_TextChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
+
         }
 
         private void mangaCorta_CheckedChanged(object sender, EventArgs e)
         {
            
-            cuelloMao.Checked = false;
+            
             button1.Enabled = checkValidForm();
+            priceControl.MangaCamisa = "corta";
+            
+            
 
         }
 
         private void cuelloMao_CheckedChanged(object sender, EventArgs e)
         {
           
-            mangaCorta.Checked = false;
+            
             button1.Enabled = checkValidForm();
+            priceControl.CuelloCamisa = "cuelloMao";
 
         }
 
         private void chupin_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
+            priceControl.tipoPantalon = "chupin";
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void standart_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
+            priceControl.calidad = "standart";
+          
         }
 
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        private void premium_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
+            priceControl.calidad = "premium";
         }
+
+        
     }
 }

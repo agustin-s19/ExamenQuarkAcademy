@@ -3,9 +3,9 @@ D:\Proyectos\CotizadorQuark\CotizadorQuark\bin\Debug\CotizadorQuark.exe
 D:\Proyectos\CotizadorQuark\CotizadorQuark\bin\Debug\CotizadorQuark.pdb
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.csproj.AssemblyReference.cache
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.csproj.SuggestedBindingRedirects.cache
-D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.Form1.resources
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.Properties.Resources.resources
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.csproj.GenerateResource.cache
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.csproj.CoreCompileInputs.cache
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.exe
 D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.pdb
+D:\Proyectos\CotizadorQuark\CotizadorQuark\obj\Debug\CotizadorQuark.Vista.resources

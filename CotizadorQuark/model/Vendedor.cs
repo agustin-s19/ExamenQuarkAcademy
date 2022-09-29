@@ -11,5 +11,12 @@ namespace CotizadorQuark
         private string nombre;
         private string apellido;
         private int codigoVendedor;
+
+        public Vendedor(string nombre, string apellido, int codigoVendedor)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.codigoVendedor = codigoVendedor;
+        }
     }
 }

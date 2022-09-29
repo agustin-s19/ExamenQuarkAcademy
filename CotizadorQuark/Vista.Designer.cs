@@ -1,6 +1,6 @@
 ﻿namespace CotizadorQuark
 {
-    partial class Form1
+    partial class Vista
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -258,7 +258,7 @@
             this.premium.TabIndex = 1;
             this.premium.Text = "Premium";
             this.premium.UseVisualStyleBackColor = true;
-            this.premium.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.premium.CheckedChanged += new System.EventHandler(this.premium_CheckedChanged);
             // 
             // standard
             // 
@@ -271,7 +271,7 @@
             this.standard.TabStop = true;
             this.standard.Text = "Standard";
             this.standard.UseVisualStyleBackColor = true;
-            this.standard.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.standard.CheckedChanged += new System.EventHandler(this.standart_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -369,7 +369,7 @@
             this.label11.TabIndex = 15;
             this.label11.Text = "label11";
             // 
-            // Form1
+            // Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -390,8 +390,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Vista";
             this.Text = "Cotizador Express";
+            this.Load += new System.EventHandler(this.Vista_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

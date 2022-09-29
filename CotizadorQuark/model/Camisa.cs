@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace CotizadorQuark
 {
-    internal class Camisa : Prenda
+    public class Camisa : Prenda
     {
-        protected string tipoManga;
+        protected  string tipoManga;
         protected string tipoCuello;
+        public Camisa(string tipoManga,string tipoCuello)
+        {
 
+        }
         public override void CalcularPrecio()
         {
             base.CalcularPrecio();
