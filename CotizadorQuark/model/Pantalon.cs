@@ -8,33 +8,15 @@ namespace CotizadorQuark
 {
     class Pantalon : Prenda
     {
-        private string tipoPantalon;
+        private string pantalonTipo;
 
-        public Pantalon(string tipoPantalon)
+        public string PantalonTipo { get => pantalonTipo; set => pantalonTipo = value; }
+        public Pantalon(string pantalonTipo, string calidad, int cantidad) : base(calidad,cantidad)
         {
-            this.tipoPantalon = tipoPantalon;
+           this.pantalonTipo = pantalonTipo;
         }
-        public string TipoPantalon { get => tipoPantalon;}
 
-        public override void CalcularPrecio()
-        {
-            base.CalcularPrecio();
-            if (calidad == "premium")
-            {
-                if (tipoPantalon == "chupin")
-                {
-                    PrecioTotal = Convert.ToInt32(PrecioTotal * 0.88);
-                    precioTotal = Convert.ToInt32(precioTotal * 1.3);
-                }
-                else
-                {
-                    if (tipoPantalon == "chupin")
-                    {
-                        PrecioTotal = Convert.ToInt32(PrecioTotal * 0.88);
-
-                    }
-                }
-            }
-        }
+        
     }
+    
 }

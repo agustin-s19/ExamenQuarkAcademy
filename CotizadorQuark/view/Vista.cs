@@ -13,6 +13,7 @@ namespace CotizadorQuark
 {
     public partial class Vista : Form
     {
+        PriceController priceController;
         public Vista()
         {
             InitializeComponent();
@@ -20,17 +21,25 @@ namespace CotizadorQuark
 
         public void Vista_Load(object sender, EventArgs e)
         {
-             PriceController priceControl = new PriceController();
+            priceController = new PriceController();
+            priceController.IniciarTienda();
+            label1.Text = priceController.Tienda.Nombre.ToString();
+            label2.Text = priceController.Tienda.Direccion.ToString();
+            label3.Text = priceController.Vendedor.Nombre.ToString() + " " + priceController.Vendedor.Apellido.ToString();
+            label4.Text = "| " + priceController.Vendedor.CodigoVendedor.ToString();
+            
 
 
         }
+
+        
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             chupin.Enabled = false;
             mangaCorta.Enabled = true;
             cuelloMao.Enabled = true;
             chupin.Checked = false;
-            priceControl.TipoPrenda = "Camisa";
+            button1.Enabled = checkValidForm();
         }
 
         private void pantalon_CheckedChanged(object sender, EventArgs e)
@@ -40,21 +49,22 @@ namespace CotizadorQuark
             cuelloMao.Enabled = false;
             mangaCorta.Checked = false;
             cuelloMao.Checked = false;
-            priceControl.TipoPrenda = "Pantalon";
+            button1.Enabled = checkValidForm();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
+
+            priceController.SeleccionPrenda(pantalon,mangaCorta,cuelloMao,chupin,ref label6,standard_name,ref precioUnitario_name,ref cantidad_name, ref label11);
+          
             
-            
-            //int resultado = priceController.calculatePrice(this);
-            //label11.Text = resultado.ToString();
+          
         }
 
         private bool checkValidForm()
         {
-            if (standard.Checked || premium.Checked) {
-                if (!cantidad.Text.Equals("") && !precioUnitario.Equals("") && camisa.Checked && mangaCorta.Checked || !cantidad.Text.Equals("") && !precioUnitario.Equals("") && camisa.Checked && cuelloMao.Checked || !cantidad.Text.Equals("") && !precioUnitario.Equals("") && pantalon.Checked && chupin.Checked)
+            if (standard_name.Checked || premium.Checked) {
+                if (!cantidad_name.Text.Equals("") && !precioUnitario_name.Equals("") && camisa.Checked || !cantidad_name.Text.Equals("") && !precioUnitario_name.Equals("") && pantalon.Checked)
                 {
                     return true;
                 }
@@ -86,7 +96,7 @@ namespace CotizadorQuark
            
             
             button1.Enabled = checkValidForm();
-            priceControl.MangaCamisa = "corta";
+            //priceControl.MangaCamisa = "corta";
             
             
 
@@ -97,29 +107,36 @@ namespace CotizadorQuark
           
             
             button1.Enabled = checkValidForm();
-            priceControl.CuelloCamisa = "cuelloMao";
+            //priceControl.CuelloCamisa = "cuelloMao";
 
         }
 
         private void chupin_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
-            priceControl.tipoPantalon = "chupin";
+            //priceControl.tipoPantalon = "chupin";
         }
 
         private void standart_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
-            priceControl.calidad = "standart";
+            //priceControl.calidad = "standart";
           
         }
 
         private void premium_CheckedChanged(object sender, EventArgs e)
         {
             button1.Enabled = checkValidForm();
-            priceControl.calidad = "premium";
+            //priceControl.calidad = "premium";
         }
 
-        
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            string listado = @"
+                 Historial de Ventas
+-------------------------------------------------";
+            MessageBox.Show(priceController.MostrarHistorial(listado));
+        }
     }
 }

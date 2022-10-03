@@ -6,36 +6,25 @@ using System.Threading.Tasks;
 
 namespace CotizadorQuark
 {
-    public abstract class Prenda
+    abstract class Prenda
     {
-        protected string calidad;
-        protected int precioUnitario;
-        protected int cantidad;
-        protected int precioTotal = 0;
+        private string calidad;
+        private int cantidad;
+        private double precioUnitario;
 
-        public Prenda() {
-
-        }
-        public Prenda(string calidad, int precioUnitario, int cantidad)
-        {
-            this.calidad = calidad;
-            this.cantidad = cantidad;
-            this.precioUnitario = precioUnitario;
-
-        }
-
-        public string Calidad { get => calidad; }
-        public int PrecioUnitario { get => precioUnitario; }
+        public string Calidad { get => calidad; set => calidad = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
-        public int PrecioTotal { get => precioTotal; set => precioTotal = value; }
+        public double PrecioUnitario { get => precioUnitario; set => precioUnitario = value; }
 
-      
-        public virtual void CalcularPrecio()
+        protected Prenda(string calidad, int cantidad)
         {
-            precioTotal = PrecioUnitario * cantidad;
+            this.Calidad = calidad;
+            this.Cantidad = cantidad;
 
         }
-       
 
+
+        
     }
+   
 }

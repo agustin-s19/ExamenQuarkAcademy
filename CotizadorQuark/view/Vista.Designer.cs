@@ -47,12 +47,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.premium = new System.Windows.Forms.RadioButton();
-            this.standard = new System.Windows.Forms.RadioButton();
+            this.standard_name = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cantidad = new System.Windows.Forms.TextBox();
-            this.precioUnitario = new System.Windows.Forms.TextBox();
+            this.cantidad_name = new System.Windows.Forms.TextBox();
+            this.precioUnitario_name = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 49);
+            this.label4.Location = new System.Drawing.Point(101, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 4;
@@ -119,6 +119,7 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Historial Cotizaciones";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // panel2
             // 
@@ -223,11 +224,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(179, 13);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.label6.Location = new System.Drawing.Point(185, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(0, 16);
             this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
             // 
             // label5
             // 
@@ -241,7 +242,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.premium);
-            this.groupBox3.Controls.Add(this.standard);
+            this.groupBox3.Controls.Add(this.standard_name);
             this.groupBox3.Location = new System.Drawing.Point(32, 255);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(195, 66);
@@ -260,25 +261,25 @@
             this.premium.UseVisualStyleBackColor = true;
             this.premium.CheckedChanged += new System.EventHandler(this.premium_CheckedChanged);
             // 
-            // standard
+            // standard_name
             // 
-            this.standard.AutoSize = true;
-            this.standard.Checked = true;
-            this.standard.Location = new System.Drawing.Point(18, 31);
-            this.standard.Name = "standard";
-            this.standard.Size = new System.Drawing.Size(68, 17);
-            this.standard.TabIndex = 0;
-            this.standard.TabStop = true;
-            this.standard.Text = "Standard";
-            this.standard.UseVisualStyleBackColor = true;
-            this.standard.CheckedChanged += new System.EventHandler(this.standart_CheckedChanged);
+            this.standard_name.AutoSize = true;
+            this.standard_name.Checked = true;
+            this.standard_name.Location = new System.Drawing.Point(18, 31);
+            this.standard_name.Name = "standard_name";
+            this.standard_name.Size = new System.Drawing.Size(68, 17);
+            this.standard_name.TabIndex = 0;
+            this.standard_name.TabStop = true;
+            this.standard_name.Text = "Standard";
+            this.standard_name.UseVisualStyleBackColor = true;
+            this.standard_name.CheckedChanged += new System.EventHandler(this.standart_CheckedChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.cantidad);
-            this.groupBox4.Controls.Add(this.precioUnitario);
+            this.groupBox4.Controls.Add(this.cantidad_name);
+            this.groupBox4.Controls.Add(this.precioUnitario_name);
             this.groupBox4.Location = new System.Drawing.Point(242, 255);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(195, 66);
@@ -305,21 +306,21 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "$";
             // 
-            // cantidad
+            // cantidad_name
             // 
-            this.cantidad.Location = new System.Drawing.Point(148, 30);
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Size = new System.Drawing.Size(30, 20);
-            this.cantidad.TabIndex = 1;
-            this.cantidad.TextChanged += new System.EventHandler(this.cantidad_TextChanged);
+            this.cantidad_name.Location = new System.Drawing.Point(148, 30);
+            this.cantidad_name.Name = "cantidad_name";
+            this.cantidad_name.Size = new System.Drawing.Size(30, 20);
+            this.cantidad_name.TabIndex = 1;
+            this.cantidad_name.TextChanged += new System.EventHandler(this.cantidad_TextChanged);
             // 
-            // precioUnitario
+            // precioUnitario_name
             // 
-            this.precioUnitario.Location = new System.Drawing.Point(34, 30);
-            this.precioUnitario.Name = "precioUnitario";
-            this.precioUnitario.Size = new System.Drawing.Size(53, 20);
-            this.precioUnitario.TabIndex = 0;
-            this.precioUnitario.TextChanged += new System.EventHandler(this.precioUnitario_TextChanged);
+            this.precioUnitario_name.Location = new System.Drawing.Point(34, 30);
+            this.precioUnitario_name.Name = "precioUnitario_name";
+            this.precioUnitario_name.Size = new System.Drawing.Size(53, 20);
+            this.precioUnitario_name.TabIndex = 0;
+            this.precioUnitario_name.TextChanged += new System.EventHandler(this.precioUnitario_TextChanged);
             // 
             // panel3
             // 
@@ -363,11 +364,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(343, 373);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.label11.Location = new System.Drawing.Point(331, 374);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(0, 29);
             this.label11.TabIndex = 15;
-            this.label11.Text = "label11";
             // 
             // Vista
             // 
@@ -423,12 +424,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton premium;
-        private System.Windows.Forms.RadioButton standard;
+        private System.Windows.Forms.RadioButton standard_name;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox cantidad;
-        private System.Windows.Forms.TextBox precioUnitario;
+        private System.Windows.Forms.TextBox cantidad_name;
+        private System.Windows.Forms.TextBox precioUnitario_name;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox mangaCorta;

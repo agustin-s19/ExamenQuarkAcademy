@@ -6,44 +6,20 @@ using System.Threading.Tasks;
 
 namespace CotizadorQuark
 {
-    public class Camisa : Prenda
+    class Camisa : Prenda
     {
-        protected  string tipoManga;
-        protected string tipoCuello;
-        public Camisa(string tipoManga,string tipoCuello)
+        private string tipoManga;
+        private string tipoCuello;
+        public string TipoManga { get => tipoManga; set => tipoManga = value; }
+        public string TipoCuello { get => tipoCuello; set => tipoCuello = value; }
+
+        public Camisa(string tipoManga, string tipoCuello,string calidad, int cantidad) : base(calidad,cantidad)
         {
-
+            this.tipoManga = tipoManga;
+            this.tipoCuello = tipoCuello;  
         }
-        public override void CalcularPrecio()
-        {
-            base.CalcularPrecio();
-            if (calidad == "premium")
-            {
-                if (tipoManga == "mangaCorta")
-                {
-                    PrecioTotal = Convert.ToInt32(PrecioTotal * 0.9);
-                    PrecioTotal = Convert.ToInt32(PrecioTotal * 1.3);
-                    if (tipoCuello == "cuelloMao")
-                    {
-                        PrecioTotal = Convert.ToInt32(PrecioTotal * 0.3 + PrecioTotal);
-                        PrecioTotal = Convert.ToInt32(PrecioTotal * 1.3);
-                    }
-                }
-            }
-            else
-            {
-                if (tipoManga == "mangaCorta")
-                {
-                    PrecioTotal = Convert.ToInt32(PrecioTotal * 0.9);
 
-                    if (tipoCuello == "cuelloMao")
-                    {
-                        PrecioTotal = Convert.ToInt32(PrecioTotal * 0.3 + PrecioTotal);
-
-                    }
-                }
-            }
-
-        }
+        
     }
+    
 }
