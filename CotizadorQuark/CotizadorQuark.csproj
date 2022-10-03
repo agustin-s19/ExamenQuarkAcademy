@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\PriceController.cs" />
-    <Compile Include="controller\ShopController.cs" />
     <Compile Include="model\Camisa.cs" />
     <Compile Include="model\Cotizacion.cs" />
     <Compile Include="view\Vista.cs">

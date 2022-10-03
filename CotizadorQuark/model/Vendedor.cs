@@ -11,7 +11,7 @@ namespace CotizadorQuark
         private string nombre;
         private string apellido;
         private int codigoVendedor;
-
+        
       
 
         public string Nombre { get { return nombre; } }

@@ -13,7 +13,7 @@ namespace CotizadorQuark.controller
         private Tienda tienda;
         private Vendedor vendedor;
         private int stock = 0;
-        //private Cotizacion cotizacion;
+     
         List<Cotizacion> HistorialDeCotizaciones = new List<Cotizacion>();
 
 
@@ -27,7 +27,7 @@ namespace CotizadorQuark.controller
         {
             tienda = new Tienda("Tienda Quark", "Avenida SiempreViva");
             vendedor = new Vendedor("Miguel", "Gutierrez", 904);
-            //Cotizacion cotizacion;
+            
             tienda.AgregarCamisas();
             tienda.AgregarPantalones();
         }
@@ -274,10 +274,7 @@ namespace CotizadorQuark.controller
 
 
 
-        //public void calculatePrice(Tipo tipo, Calidad calidad, Precio precio, Cantidad cantidad)
-        //{
-
-        //}
+       
 
     }
 }
